@@ -13,5 +13,5 @@
 
 Part 3
   * [x] Install Pug template engine, setting app.js to run the view (index.pug)
-  * [ ] Basic Pug html
-  * [ ]
+  * [x] Basic Pug html
+  * [x] Write html on .pug, read variables from .js to .pug, install nodemon so we dont need restart server each time we do changes 

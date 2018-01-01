@@ -13,7 +13,9 @@ app.set('view engine', 'pug');
 // Buat route, yang kalau kita akses (request halaman) / (root) dia akan handle request kita
 app.get('/', function(req, res){ // request ke app directory / (root), kalau udah ke akses jalanin callback function(req,res) jadi kita bs punya akses untuk jalnin object request dan response
   //res.send('Hello Wolrd~'); // Berikan respon ke browser, isinya send "hello world"
-  res.render('index');
+  res.render('index', {
+    articleTitle: 'Article 1' 
+  });
 });
 
 // Start Server
