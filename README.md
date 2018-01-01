@@ -1,5 +1,17 @@
 ## nodekb Project
-## This project will be Knowledgebase website base on nodeJS using Express Framework and PUG tempalte for front end
+## This project will be Knowledgebase website base on nodeJS using Express Framework, PUG template for front-end and Mongodb as database  
+## Base on tutorial Node.js & Express From Scratch by Traversy Media https://www.youtube.com/playlist?list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp
+
+## Environtment
+  * Base on : NodeJS v6.10
+  * Text Editor : Atom https://atom.io/
+  * Console : Git Bash https://git-scm.com/download/win
+  * NodeJS Framework : ExpressJS http://expressjs.com/ (Install using npm)
+  * Template Engine : Pug https://pugjs.org/api/getting-started.html (Install using npm)
+  * Database : Mongodb Community Server v3.6 https://www.mongodb.com/download-center?jmp=nav#community
+  * Other Modules or Plugins :
+    * NODEMON https://nodemon.io/
+    * language-pug : Pug syntax highlight for Atom
 
 ## TODO
  PART 1
@@ -14,4 +26,8 @@
 Part 3
   * [x] Install Pug template engine, setting app.js to run the view (index.pug)
   * [x] Basic Pug html
-  * [x] Write html on .pug, read variables from .js to .pug, install nodemon so we dont need restart server each time we do changes 
+  * [x] Write html on .pug, read variables from .js to .pug, install nodemon module so we dont need restart server each time we do changes
+  * [x] Create route when localhost:3000/articles/add goes to view/add_article
+  * [x] Create layout.pug and use extends, so we dont have to repeat same code for header etc. We can layout at each page
+  * [x] Create content (articles) using array and loop
+  * [x] Install pug hightligt at atom

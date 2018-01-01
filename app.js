@@ -13,8 +13,36 @@ app.set('view engine', 'pug');
 // Buat route, yang kalau kita akses (request halaman) / (root) dia akan handle request kita
 app.get('/', function(req, res){ // request ke app directory / (root), kalau udah ke akses jalanin callback function(req,res) jadi kita bs punya akses untuk jalnin object request dan response
   //res.send('Hello Wolrd~'); // Berikan respon ke browser, isinya send "hello world"
+  let articlesList = [
+    {
+      title: 'Article 1',
+      author: 'Budi',
+      year: 2006,
+      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    {
+      title: 'Article 2',
+      author: 'John',
+      year: 2011,
+      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    {
+      title: 'Article 3',
+      author: 'Thompson',
+      year: 1988,
+      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    }
+  ];
   res.render('index', {
-    articleTitle: 'Article 1' 
+    title: 'Articles',
+    articles: articlesList
+  });
+});
+
+// Add Articles Route
+app.get('/articles/add', (req, res) => {
+  res.render('add_article', {
+    title: 'Add Article Page'
   });
 });
 
