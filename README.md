@@ -36,8 +36,8 @@ Part 3 Pug Template Engine
 Part 4 Mongoose & Model Setup
   * [x] Trying using mongodb console, create, insert and view db
   * [x] Connecting app to mongodb through Mongoose
-  * [ ] Create model and schema
-  * [ ] Connect app.js with model and send value to website
+  * [x] Create model and schema
+  * [x] Connect app.js with model and send value to website
 
 Part 5 Save Articles to MongoDB
  * [ ]

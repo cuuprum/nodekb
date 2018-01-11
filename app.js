@@ -1,12 +1,26 @@
 const express = require('express'); // Import library express
 const path = require('path'); // Import lib path dr core lib nodejs
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); // Import lib mongoose
 
+// Connect ke mongodb, membuat variable koneksi db
 mongoose.connect('mongodb://localhost/nodekb');
 let db = mongoose.connection;
 
+// Check connection
+db.once('open', function(){
+  console.log('Connnected to MongoDB');
+});
+
+// Check for DB error
+db.on('error', function(err){
+  console.log(err);
+});
+
 // Init App
 const app = express(); // Bikin variable yang bs jalanin fungsi express
+
+// Init Model (bring in models)
+let Article = require('./models/article');
 
 // Load View Engine
 // Object views direct ke path yang ada view nya
@@ -17,29 +31,16 @@ app.set('view engine', 'pug');
 // Buat route, yang kalau kita akses (request halaman) / (root) dia akan handle request kita
 app.get('/', function(req, res){ // request ke app directory / (root), kalau udah ke akses jalanin callback function(req,res) jadi kita bs punya akses untuk jalnin object request dan response
   //res.send('Hello Wolrd~'); // Berikan respon ke browser, isinya send "hello world"
-  let articlesList = [
-    {
-      title: 'Article 1',
-      author: 'Budi',
-      year: 2006,
-      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    },
-    {
-      title: 'Article 2',
-      author: 'John',
-      year: 2011,
-      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    },
-    {
-      title: 'Article 3',
-      author: 'Thompson',
-      year: 1988,
-      body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+
+  Article.find({}, function(err, articles){
+    if(err){
+      console.log(err);
+    }else{
+      res.render('index', {
+        title: 'Articles',
+        articles: articles
+      });
     }
-  ];
-  res.render('index', {
-    title: 'Articles',
-    articles: articlesList
   });
 });
 
