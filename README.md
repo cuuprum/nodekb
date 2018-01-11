@@ -1,6 +1,7 @@
 ## nodekb Project
-## This project will be Knowledgebase website base on nodeJS using Express Framework, PUG template for front-end and Mongodb as database  
-## Base on tutorial Node.js & Express From Scratch by Traversy Media https://www.youtube.com/playlist?list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp
+This project will be Knowledgebase website base on nodeJS using Express Framework, PUG template for front-end and Mongodb as database  
+Base on tutorial Node.js & Express From Scratch by Traversy Media
+https://www.youtube.com/playlist?list=PLillGF-RfqbYRpji8t4SxUkMxfowG4Kqp
 
 ## Environtment
   * Base on : NodeJS v6.10
@@ -10,24 +11,58 @@
   * Template Engine : Pug https://pugjs.org/api/getting-started.html (Install using npm)
   * Database : Mongodb Community Server v3.6 https://www.mongodb.com/download-center?jmp=nav#community
   * Other Modules or Plugins :
-    * NODEMON https://nodemon.io/
-    * language-pug : Pug syntax highlight for Atom
+    * NODEMON https://nodemon.io/ (install using npm)
+    * language-pug : Pug syntax highlight for Atom (install at atom extension)
 
 ## TODO
- PART 1
+ PART 1 Intro & Environment
    * [x] Setup environtment
 
- PART 2
+ PART 2 App Setup & Express Install
    * [x] Create project, init using npm init and write package.json to describe dependencies
    * [x]  Create app.js as starting file and set npm script "start" to start app.js as first file starting Project
    * [x] Install Express Framework using npm and --save to register it to dependencies
    * [x] Create simple server, route and display hello wolrd  
 
-Part 3
+Part 3 Pug Template Engine
   * [x] Install Pug template engine, setting app.js to run the view (index.pug)
   * [x] Basic Pug html
   * [x] Write html on .pug, read variables from .js to .pug, install nodemon module so we dont need restart server each time we do changes
   * [x] Create route when localhost:3000/articles/add goes to view/add_article
   * [x] Create layout.pug and use extends, so we dont have to repeat same code for header etc. We can layout at each page
   * [x] Create content (articles) using array and loop
-  * [x] Install pug hightligt at atom
+  * [x] Install pug highligt at atom
+
+Part 4 Mongoose & Model Setup
+  * [x] Trying using mongodb console, create, insert and view db
+  * [x] Connecting app to mongodb through Mongoose
+  * [ ] Create model and schema
+  * [ ] Connect app.js with model and send value to website
+
+Part 5 Save Articles to MongoDB
+ * [ ]
+ * [ ]
+
+Part 6 Bower & Bootstrap
+ * [ ]
+ * [ ]
+
+Part 7 Update & Delete Articles
+ * [ ]
+ * [ ]
+
+Part 8 Messaging & Validation
+* [ ]
+* [ ]
+
+Part 9 User Registration
+* [ ]
+* [ ]
+
+Part 10  User Login
+* [ ]
+* [ ]
+
+Part FINAL Deploying Our App
+* [ ]
+* [ ]

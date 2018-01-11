@@ -1,5 +1,9 @@
 const express = require('express'); // Import library express
 const path = require('path'); // Import lib path dr core lib nodejs
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/nodekb');
+let db = mongoose.connection;
 
 // Init App
 const app = express(); // Bikin variable yang bs jalanin fungsi express
