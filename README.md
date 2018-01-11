@@ -38,6 +38,7 @@ Part 4 Mongoose & Model Setup
   * [x] Connecting app to mongodb through Mongoose
   * [x] Create model and schema
   * [x] Connect app.js with model and send value to website
+  * [x] Show all attribute from article to view using pug variable
 
 Part 5 Save Articles to MongoDB
  * [ ]
