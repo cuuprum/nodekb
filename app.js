@@ -1,9 +1,11 @@
 const express = require('express'); // Import library express
 const path = require('path'); // Import lib path dr core lib nodejs
 const mongoose = require('mongoose'); // Import lib mongoose
+const bodyParser = require('body-parser');
 
 // Connect ke mongodb, membuat variable koneksi db
-mongoose.connect('mongodb://localhost/nodekb');
+mongoose.connect('127.0.0.1/nodekb');
+//mongoose.connect('localhost/nodekb'); -> ntah kenapa harus konek ke internet kl pk localhost
 let db = mongoose.connection;
 
 // Check connection
@@ -27,6 +29,11 @@ let Article = require('./models/article');
 app.set('views', path.join(__dirname, 'views')); // __dirname = lokasi folder ini skrg, "views" nama folder di tuju, jadi nodekb/views
 app.set('view engine', 'pug');
 
+// Body Parser - Parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false}));
+// Parse application/json
+app.use(bodyParser.json());
+
 // Home Route
 // Buat route, yang kalau kita akses (request halaman) / (root) dia akan handle request kita
 app.get('/', function(req, res){ // request ke app directory / (root), kalau udah ke akses jalanin callback function(req,res) jadi kita bs punya akses untuk jalnin object request dan response
@@ -48,6 +55,24 @@ app.get('/', function(req, res){ // request ke app directory / (root), kalau uda
 app.get('/articles/add', (req, res) => {
   res.render('add_article', {
     title: 'Add Article Page'
+  });
+});
+
+// Add Submit POST route
+app.post('/articles/add', (req, res) => {
+  let article = new Article();
+  article.title = req.body.title;
+  article.author = req.body.author;
+  article.year = req.body.year;
+  article.body = req.body.body;
+
+  article.save(function(err){
+    if(err){
+      console.log(err);
+      return;
+    }else {
+      res.redirect('/');
+    }
   });
 });
 

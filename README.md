@@ -41,7 +41,7 @@ Part 4 Mongoose & Model Setup
   * [x] Show all attribute from article to view using pug variable
 
 Part 5 Save Articles to MongoDB
- * [ ]
+ * [x] Create form on pug
  * [ ]
 
 Part 6 Bower & Bootstrap
