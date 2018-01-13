@@ -41,12 +41,12 @@ Part 4 Mongoose & Model Setup
   * [x] Show all attribute from article to view using pug variable
 
 Part 5 Save Articles to MongoDB
- * [x] Create form on pug
- * [ ]
+ * [x] Create form using pug on article/add
+ * [x] Store values from display form, to mobel object and redirect to root
 
 Part 6 Bower & Bootstrap
- * [ ]
- * [ ]
+ * [x] Install Bower, buat file .bowerrc dan folder bower_components and install Bootstrap
+ * [ ] Edit html
 
 Part 7 Update & Delete Articles
  * [ ]

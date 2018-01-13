@@ -34,6 +34,10 @@ app.use(bodyParser.urlencoded({ extended: false}));
 // Parse application/json
 app.use(bodyParser.json());
 
+// Set Public Folder
+// Di express ada public folder yang isinya file static kayak css, about dll
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Home Route
 // Buat route, yang kalau kita akses (request halaman) / (root) dia akan handle request kita
 app.get('/', function(req, res){ // request ke app directory / (root), kalau udah ke akses jalanin callback function(req,res) jadi kita bs punya akses untuk jalnin object request dan response
