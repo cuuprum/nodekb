@@ -46,7 +46,8 @@ Part 5 Save Articles to MongoDB
 
 Part 6 Bower & Bootstrap
  * [x] Install Bower, buat file .bowerrc dan folder bower_components and install Bootstrap
- * [ ] Edit html
+ * [x] Edit html, add .container .list-group
+ * [ ] 
 
 Part 7 Update & Delete Articles
  * [ ]
