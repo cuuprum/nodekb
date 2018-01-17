@@ -4,8 +4,8 @@ const mongoose = require('mongoose'); // Import lib mongoose
 const bodyParser = require('body-parser');
 
 // Connect ke mongodb, membuat variable koneksi db
-//mongoose.connect('127.0.0.1/nodekb');
-mongoose.connect('localhost/nodekbcuuprum'); -> ntah kenapa harus konek ke internet kl pk localhost
+mongoose.connect('127.0.0.1/nodekb');
+//mongoose.connect('localhost/nodekbcuuprum'); -> ntah kenapa harus konek ke internet kl pk localhost
 let db = mongoose.connection;
 
 // Check connection
